@@ -1,0 +1,12 @@
+modules/__pycache__/__init__.cpython-311.pyc
+modules/__pycache__/ansible_tasks.cpython-311.pyc
+modules/__pycache__/ansible.cpython-311.pyc
+modules/__pycache__/bootlog.cpython-311.pyc
+modules/__pycache__/cc.cpython-311.pyc
+modules/__pycache__/data.cpython-311.pyc
+modules/__pycache__/docker_build.cpython-311.pyc
+modules/__pycache__/download.cpython-311.pyc
+modules/__pycache__/ocr_train.cpython-311.pyc
+modules/__pycache__/pip_install.cpython-311.pyc
+modules/__pycache__/weblog.cpython-311.pyc
+modules/__pycache__/*

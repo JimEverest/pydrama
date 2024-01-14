@@ -1,0 +1,5 @@
+WARNING: The script is installed in a directory not in PATH.
+ERROR: Command errored out with exit status 1.
+INFO: Successfully installed the package.
+DEPRECATED: This package will no longer be maintained.
+Compiling: Building wheels for collected packages.
