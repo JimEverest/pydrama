@@ -1,21 +1,17 @@
 # PyDrama
 
-PyDrama 是一个仿真工具，用于模拟各种开发者活动，给你的终端增添动态和戏剧性。
+Welcome to PyDrama, the ultimate simulation tool that spices up your terminal with a dash of developer drama! Whether you're coding in solitude or in a bustling open office, PyDrama adds that extra zing to your development life.
 
-## 安装
+## Installation
 
-使用 pip 安装 PyDrama：
+Get ready to add some theatrics to your terminal with a simple pip command:
 
-> pip install pydrama
+```bash
+pip install pydrama
+```
 
-## 使用方法
+For a full list of commands and modules, and to get behind-the-scenes access, check out our Official Documentation.
 
-启动 PyDrama 后，选择你想模拟的模块运行：
-pydrama -m bootlog
+## License
 
-
-更多使用信息，请查阅 [官方文档](https://github.com/JimEverest/pydrama)。
-
-## 许可证
-
-本项目采用 [MIT 许可证](LICENSE)。
+PyDrama is released under the MIT License, so feel free to use it, modify it, and share it with your fellow thespians!

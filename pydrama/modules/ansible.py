@@ -1,6 +1,7 @@
+import os
 import random
 import time
-
+from .data import read_data_file
 # ANSI 颜色代码
 RED = '\033[91m'
 GREEN = '\033[92m'
@@ -14,9 +15,15 @@ def generate_ipv4_address():
 def generate_ipv6_address():
     return ':'.join([''.join([random.choice('0123456789abcdef') for _ in range(4)]) for _ in range(8)])
 
-def read_file(file_path):
-    with open(file_path, 'r') as file:
-        return file.readlines()
+# def read_data_file(file_name):
+#     # Get the directory of the current script
+#     module_dir = os.path.dirname(__file__)
+#     # Go up one directory level to the 'pydrama' directory
+#     pydrama_dir = os.path.dirname(module_dir)
+#     # Construct the full path to the file in the 'data' directory
+#     file_path = os.path.join(pydrama_dir, 'data', file_name)
+#     with open(file_path, 'r', encoding='utf-8') as file:
+#         return file.readlines()
 
 def do_for_all_hosts(hosts, is_gather):
     for host in hosts:
@@ -51,8 +58,8 @@ def do_for_all_hosts(hosts, is_gather):
         time.sleep(random.uniform(0.1, 0.5))
 
 def simulate_ansible():
-    roles = read_file('data/ansible_roles.txt')
-    tasks = read_file('data/ansible_tasks.txt')
+    roles = read_data_file('ansible_roles.txt')
+    tasks = read_data_file('ansible_tasks.txt')
     ipv4_hosts = [generate_ipv4_address() for _ in range(5)]
     ipv6_hosts = [generate_ipv6_address() for _ in range(5)]
     hosts = ipv4_hosts + ipv6_hosts

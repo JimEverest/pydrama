@@ -1,6 +1,6 @@
 import argparse
 import time
-from modules import MODULES
+from .modules import MODULES
 
 # 解析命令行参数
 def parse_args():
@@ -27,7 +27,7 @@ def run_modules(modules, speed_factor, exit_after_modules):
             print(f"Module {module_name} not found.")
 
 # 主函数
-def main():
+def pydrama():
     args = parse_args()
 
     # 列出模块
@@ -59,4 +59,4 @@ def main():
             break
 
 if __name__ == "__main__":
-    main()
+    pydrama()

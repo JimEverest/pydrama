@@ -11,10 +11,7 @@ MAGENTA = '\033[95m'
 WHITE = '\033[97m'
 RESET = '\033[0m'
 
-# 读取文件内容
-def read_file(file_path):
-    with open(file_path, 'r') as file:
-        return file.readlines()
+from .data import read_data_file
 
 # 模拟进度条
 def progress_bar(color, process, duration, total=50):
@@ -70,8 +67,8 @@ def simulate_package_installation(package, messages, installed_packages):
 
 # 主函数模拟 pip install
 def simulate_pip_install(duration=100):
-    packages = read_file('data/packages.txt')
-    messages = read_file('data/messages.txt')
+    packages = read_data_file('packages.txt')
+    messages = read_data_file('messages.txt')
     installed_packages = []
     start_time = time.time()
 

@@ -1,7 +1,7 @@
 import random
 import time
 import os
-
+from .data import read_file_lines
 # ANSI escape codes for colors
 GREEN = '\033[92m'  # ANSI escape code for green text
 RED = "\033[31m"
@@ -22,12 +22,12 @@ warnings = [
     "Memory allocation error"
 ]
 
-def load_bootlog(file_path):
-    with open(file_path, 'r') as file:
-        return [line.strip() for line in file if line.strip()]
+# def load_bootlog(file_path):
+#     with open(file_path, 'r') as file:
+#         return [line.strip() for line in file if line.strip()]
 
 def simulate_bootlog():
-    logs = load_bootlog('data/bootlog.txt')
+    logs = read_file_lines('bootlog.txt')
     num_lines = random.randint(50, 200)
     burst_mode = False
     count_burst_lines = 0

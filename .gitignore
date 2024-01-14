@@ -10,3 +10,9 @@ modules/__pycache__/ocr_train.cpython-311.pyc
 modules/__pycache__/pip_install.cpython-311.pyc
 modules/__pycache__/weblog.cpython-311.pyc
 modules/__pycache__/*
+dist/pydrama-0.1.0-py3-none-any.whl
+dist/*
+build/*
+pydrama.egg-info/*
+pydrama/modules/__pycache__/*
+*.pyc

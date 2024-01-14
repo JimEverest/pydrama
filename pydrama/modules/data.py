@@ -1,5 +1,5 @@
 # data.py
-
+import os
 # 文件扩展名列表
 EXTENSIONS_LIST = [
     ".gif", ".mkv", ".webm", ".mp4", ".html", ".php", ".md", ".png", ".jpg", ".opus", ".ogg", ".mp3", ".flac",
@@ -11,8 +11,13 @@ COMPRESSION_FORMATS_LIST = [
     "gzip", "bzip2", "lzma", "xz", "lzop", "lz4", "zstd"
 ]
 
-# 从文件中读取数据
-def read_data_file(file_path):
+def read_data_file(file_name):
+    # Get the directory of the current script
+    module_dir = os.path.dirname(__file__)
+    # Go up one directory level to the 'pydrama' directory
+    pydrama_dir = os.path.dirname(module_dir)
+    # Construct the full path to the file in the 'data' directory
+    file_path = os.path.join(pydrama_dir, 'data', file_name)
     with open(file_path, 'r', encoding='utf-8') as file:
         return file.readlines()
 
@@ -21,21 +26,21 @@ def load_data(file_path):
     return [line.strip() for line in read_data_file(file_path)]
 
 # 定义数据文件路径
-BOOTLOG_FILE = 'data/bootlog.txt'
-CFILES_FILE = 'data/cfiles.txt'
-PACKAGES_FILE = 'data/packages.txt'
-COMPOSERS_FILE = 'data/composer.txt'
-SIMCITY_FILE = 'data/simcity.txt'
-BOOT_HOOKS_FILE = 'data/boot_hooks.txt'
-OS_RELEASES_FILE = 'data/os_releases.txt'
-DOCKER_PACKAGES_FILE = 'data/docker_packages.txt'
-DOCKER_TAGS_FILE = 'data/docker_tags.txt'
-ANSIBLE_ROLES_FILE = 'data/ansible_roles.txt'
-ANSIBLE_TASKS_FILE = 'data/ansible_tasks.txt'
-RKHUNTER_CHECKS_FILE = 'data/rkhunter_checks.txt'
-RKHUNTER_ROOTKITS_FILE = 'data/rkhunter_rootkits.txt'
-RKHUNTER_TASKS_FILE = 'data/rkhunter_tasks.txt'
-JULIA_PACKAGES_FILE = 'data/julia.csv'
+BOOTLOG_FILE = 'bootlog.txt'
+CFILES_FILE = 'cfiles.txt'
+PACKAGES_FILE = 'packages.txt'
+COMPOSERS_FILE = 'composer.txt'
+SIMCITY_FILE = 'simcity.txt'
+BOOT_HOOKS_FILE = 'boot_hooks.txt'
+OS_RELEASES_FILE = 'os_releases.txt'
+DOCKER_PACKAGES_FILE = 'docker_packages.txt'
+DOCKER_TAGS_FILE = 'docker_tags.txt'
+ANSIBLE_ROLES_FILE = 'ansible_roles.txt'
+ANSIBLE_TASKS_FILE = 'ansible_tasks.txt'
+RKHUNTER_CHECKS_FILE = 'rkhunter_checks.txt'
+RKHUNTER_ROOTKITS_FILE = 'rkhunter_rootkits.txt'
+RKHUNTER_TASKS_FILE = 'rkhunter_tasks.txt'
+# JULIA_PACKAGES_FILE = 'julia.csv'
 
 # 加载数据到内存
 BOOTLOG_LIST = load_data(BOOTLOG_FILE)
@@ -59,7 +64,7 @@ def load_julia_packages(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return [line.strip().split(',') for line in file]
 
-JULIA_PACKAGES_LIST = load_julia_packages(JULIA_PACKAGES_FILE)
+# JULIA_PACKAGES_LIST = load_julia_packages(JULIA_PACKAGES_FILE)
 
 
 
@@ -67,11 +72,17 @@ JULIA_PACKAGES_LIST = load_julia_packages(JULIA_PACKAGES_FILE)
 
 # 示例：从文件中读取数据并创建列表
 def read_file_lines(file_path):
-    with open(file_path, 'r') as file:
+    # Get the directory of the current script
+    module_dir = os.path.dirname(__file__)
+    # Go up one directory level to the 'pydrama' directory
+    pydrama_dir = os.path.dirname(module_dir)
+    # Construct the full path to the file in the 'data' directory
+    file_path = os.path.join(pydrama_dir, 'data', file_path)
+    with open(file_path, 'r', encoding='utf-8') as file:
         return [line.strip() for line in file.readlines()]
 
 # 定义需要的数据列表
-PACKAGES_LIST = read_file_lines('data/packages.txt')
+PACKAGES_LIST = read_file_lines('packages.txt')
 EXTENSIONS_LIST = [
     "gif", "mkv", "webm", "mp4", "html", "php", "md", "png", "jpg",
     "opus", "ogg", "mp3", "flac", "iso", "zip", "rar", "tar.gz",

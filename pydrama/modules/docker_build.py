@@ -1,16 +1,14 @@
 import random
 import time
 
-def read_file(file_path):
-    with open(file_path, 'r') as file:
-        return file.readlines()
+from .data import read_data_file
 
 def gen_hex_string(length):
     return ''.join(random.choices('0123456789abcdef', k=length))
 
 def simulate_docker_build():
-    packages = read_file('data/docker_packages.txt')
-    tags = read_file('data/docker_tags.txt')
+    packages = read_data_file('docker_packages.txt')
+    tags = read_data_file('docker_tags.txt')
 
     # 发送构建上下文到 Docker 守护进程
     target_size = random.uniform(100.0, 1000.0)

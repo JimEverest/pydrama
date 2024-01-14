@@ -1,6 +1,7 @@
 import os
 import random
 import time
+from .data import read_data_file
 
 # ANSI 颜色代码
 RED = '\033[91m'
@@ -10,9 +11,7 @@ BLUE = '\033[94m'
 CYAN = '\033[96m'
 RESET = '\033[0m'
 
-def read_file(file_path):
-    with open(file_path, 'r') as file:
-        return file.readlines()
+
 
 def generate_includes(file_list, max_count):
     include_flags = set()
@@ -29,8 +28,8 @@ def simulate_cc():
     arch_flags = ["-march=x86-64", "-mtune=generic", "-pipe"]
     def_flags = ["-DDEBUG", "-DNDEBUG", "-D_REENTRANT", "-DMATH_LOOP"]
 
-    c_files = read_file('data/cfiles.txt')
-    packages = read_file('data/packages.txt')
+    c_files = read_data_file('cfiles.txt')
+    packages = read_data_file('packages.txt')
 
     compiler = random.choice(compilers)
     opt_flag = random.choice(opt_flags)
